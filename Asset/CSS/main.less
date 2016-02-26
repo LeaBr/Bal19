@@ -1,0 +1,118 @@
+/* ----- variable less ----- */
+
+	/* Couleur */
+	
+		@color-gold:#c2a05c;
+		@color-black:#414143;
+		@color-white:white;
+
+	/* Taille Typographie */
+	
+		@font-root: 16px;
+		@font-small:unit((18px/@font-root),em);
+		@font-medium:unit((24px/@font-root),em);
+		@font-large:unit((32px/@font-root),em);
+
+	/* Taille Ecran */
+	
+		@device-width-small:unit((660px/@font-root),em);
+		@device-width-medium:unit((1024px/@font-root),em);
+		@device-width-large:unit((1280px/@font-root),em);
+
+	/* Grille */
+	
+		@largeur-goutiere:5%;
+		@hauteur-goutiere:2%;
+		
+	
+/* ----- Téléphone ----- */
+
+		body
+		{
+			/*background-color:@color-gold;*/
+			margin:@largeur-goutiere;
+			font-size:@font-medium;
+			text-align:center;
+			font-family:arial;
+		}
+		
+		h1
+		{
+			padding-bottom:@hauteur-goutiere;
+		}
+		
+		a
+		{
+			display:block;
+			border-bottom:solid @color-black 1px;
+			padding:@hauteur-goutiere;
+			text-decoration:none;
+			color: black;
+		}
+		
+		img
+		{
+			margin-top:2*@hauteur-goutiere;
+			/*margin-bottom:@hauteur-goutiere;*/
+			width:100%;
+		}
+		
+		footer
+		{
+			font-style:italic;
+			font-size:@font-root;
+		}
+
+
+/* ----- Tablette ----- */
+	
+	@media screen and (min-width : @device-width-small)
+	{
+		a
+		{
+			display:inline;
+			padding:@hauteur-goutiere;
+			margin:@largeur-goutiere;
+			border-bottom:solid @color-black 0px;
+		}
+
+		section
+		{
+			margin-top:@largeur-goutiere;
+		}
+		
+		nav
+		{
+			/*background-color:@color-gold;*/
+			padding-top:1.5*@hauteur-goutiere;
+			border-bottom:solid @color-black 1px;
+		}
+	}
+
+
+/* ----- Grand Ecran ----- */
+
+	@media screen and (min-width : @device-width-large)
+	{	
+		h1
+		{
+			float:left;
+			width:40%;
+			text-align:left;
+		}
+		
+		nav
+		{
+			float:right;
+			width:60%;
+			border-bottom:solid @color-black 0px;
+			padding-top:2*@hauteur-goutiere;
+			text-align:right;
+		}
+		
+		section
+		{
+			clear:both;
+			padding-top:@hauteur-goutiere;
+		}
+	}
